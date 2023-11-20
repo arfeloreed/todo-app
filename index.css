@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap");
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Roboto', sans-serif; */
+
+:root {
+  --border-color: #9dadc7;
+  --text-color: #bacdeb;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* general */
+body {
+  font-family: Roboto, sans-serif;
+  color: var(--text-color);
+}
+
+main {
+  height: 100vh;
+  background: url(bg.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  border-left: 5px solid orangered;
+  font-size: 2rem;
+  margin: 25px 0 15px 15px;
+  padding-left: 7px;
+}
+
+/* custom elements config */
+#container {
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  width: 98%;
+  max-width: 600px;
+  /* height: auto; */
+  /* max-height: 700px; */
+  padding: 45px;
+  backdrop-filter: blur(10px);
+}
+
+/* time and date */
+#time-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#time-con > p {
+  pointer-events: none;
+}
+
+/* adding todos */
+.form-control {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.form-control > input {
+  flex: 1;
+  outline: none;
+  padding: 10px 10px 10px 20px;
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  margin-right: 7px;
+  font-size: 16px;
+  color: var(--text-color);
+}
+/* ::placeholder {
+  color: #bacdeb;
+} */
+
+.form-control > button {
+  border: none;
+  outline: none;
+  color: #2bc232;
+  background-color: transparent;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* editing todo */
+#edit-form {
+  margin: 10px 0 0;
+}
+#edit-form > p {
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+}
+
+#edit-btn {
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+#edit-btn:hover {
+  color: #fff;
+}
+
+#cancel-edit-btn {
+  border: 2px solid var(--border-color);
+  padding: 5px 15px;
+  border-radius: 100px;
+  background-color: #e60d00;
+  color: #fff;
+  font-size: 1rem;
+  margin: 10px 0 0;
+  cursor: pointer;
+}
+
+/* filters */
+#filter-con {
+  margin: 15px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.filter {
+  text-transform: capitalize;
+  cursor: pointer;
+  border: 2px solid var(--border-color);
+  padding: 5px 15px;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+.filter:hover,
+.filter.active {
+  background-color: #000;
+}
+
+#delete-all {
+  text-transform: capitalize;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+#delete-all:hover {
+  background-color: #e60d00;
+}
+
+/* todos */
+#todos,
+#completed-todos {
+  max-height: 230px;
+  overflow: auto;
+}
+
+.todo {
+  border: 2px solid var(--border-color);
+  background-color: #5d6075;
+  color: #fff;
+  border-radius: 8px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  margin: 10px 0;
+  cursor: default;
+  position: relative;
+}
+.todo:hover {
+  background-color: #3a3b48;
+}
+.todo:first-child {
+  margin-top: 0;
+}
+.todo:last-child {
+  margin-bottom: 0;
+}
+
+.todo > p {
+  flex: 1;
+}
+
+/* todos buttons */
+.todo > button {
+  margin: 0 5px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.done-btn,
+.edit-btn,
+.delete-btn {
+  color: #2bc232;
+  font-size: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.done-btn {
+  margin-left: 0;
+}
+.edit-btn {
+  color: skyblue;
+}
+.delete-btn {
+  color: #e60d00;
+}
+.done-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover {
+  transform: scale(1.2);
+}
+
+/* functionality classes */
+.done {
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  background-color: #3a3b48;
+}
+
+.hide {
+  display: none !important;
+}
+
+/* responsiveness */
+@media screen and (max-width: 440px) {
+  #container {
+    padding: 25px;
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Todos</title>
+
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body onload="time()">
+  
+<main>
+  <section id="container">
+    <!-- time -->
+    <div id="time-con">
+      <p id="date"></p>
+      <p id="hour"></p>
+    </div>
+    <h1>My TODO's</h1>
+
+    <!-- add todo -->
+    <form action="" id="todo-form">
+      <div class="form-control">
+        <input type="text" name="task" id="addTask" placeholder="Enter a new task...">
+        <button type="submit"><i class="fa-solid fa-circle-plus"></i></button>
+        <!-- <button type="submit">+</button> -->
+      </div>
+    </form>
+
+    <!-- edit todo -->
+    <form action="" id="edit-form" class="hide">
+      <p>Edit Task</p>
+      <div class="form-control">
+        <input type="text" name="edit-task" id="edit-task" placeholder="Enter a new task...">
+        <button type="submit" id="edit-btn">Edit</button>
+      </div>
+      <button type="button" id="cancel-edit-btn">Cancel</button>
+    </form>
+
+    <!-- filters -->
+    <div id="filter-con">
+      <div id="all-btn" class="filter active" data-filters="all">all</div>
+      <div id="completed-btn" class="filter" data-filters="completed">completed</div>
+      <div id="unfinished-btn" class="filter" data-filters="unfinished">unfinished</div>
+      <div id="delete-all">delete all</div>
+    </div>
+
+    <!-- todos -->
+    <ul id="todos">
+      <!-- <li class="todo">Sample task <div class="todos-btn-con"><button type="button" class="done-btn"><i class="fa-solid fa-circle-check"></i></button> <button type="button" class="edit-btn"><i class="fa-solid fa-pen"></i></button> <button type="button" class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></button></div></li> -->
+    </ul>
+
+    <!-- filter for completed todos -->
+    <!-- <ul id="completed-todos" class="hide">
+    </ul> -->
+  </section>
+</main>
+
+<script src="https://kit.fontawesome.com/8f29d78dc3.js" crossorigin="anonymous"></script>
+<script src="./index.js"></script>
+</body>
+</html>
